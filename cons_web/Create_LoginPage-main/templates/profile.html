@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="title">
+    <b>Welcome, {{name}}!</b>
+    <br>
+    <br>
+    <br>
+    Proceed to enter data
+    <br>
+    <button onclick='window.location.href="{{ url_for('main.insert') }}"' class="button is-offset-4 is-success">Insert</button>
+</h1>
+{% endblock %}

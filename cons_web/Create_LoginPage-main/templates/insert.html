@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        <div class="notification is-success">
+            {{ messages[0] }}
+        </div>
+    {% endif %}
+{% endwith %}
+<form method="POST" action="/insert">
+<label for="State">State:</label>
+<select id="country-state" name="country-state"  class="control">
+    <option value="AN">Andaman and Nicobar Islands</option>
+    <option value="AP">Andhra Pradesh</option>
+    <option value="AR">Arunachal Pradesh</option>
+    <option value="AS">Assam</option>
+    <option value="BR">Bihar</option>
+    <option value="CH">Chandigarh</option>
+    <option value="CT">Chhattisgarh</option>
+    <option value="DN">Dadra and Nagar Haveli</option>
+    <option value="DD">Daman and Diu</option>
+    <option value="DL">Delhi</option>
+    <option value="GA">Goa</option>
+    <option value="GJ">Gujarat</option>
+    <option value="HR">Haryana</option>
+    <option value="HP">Himachal Pradesh</option>
+    <option value="JK">Jammu and Kashmir</option>
+    <option value="JH">Jharkhand</option>
+    <option value="KA">Karnataka</option>
+    <option value="KL">Kerala</option>
+    <option value="LA">Ladakh</option>
+    <option value="LD">Lakshadweep</option>
+    <option value="MP">Madhya Pradesh</option>
+    <option value="MH">Maharashtra</option>
+    <option value="MN">Manipur</option>
+    <option value="ML">Meghalaya</option>
+    <option value="MZ">Mizoram</option>
+    <option value="NL">Nagaland</option>
+    <option value="OR">Odisha</option>
+    <option value="PY">Puducherry</option>
+    <option value="PB">Punjab</option>
+    <option value="RJ">Rajasthan</option>
+    <option value="SK">Sikkim</option>
+    <option value="TN">Tamil Nadu</option>
+    <option value="TG">Telangana</option>
+    <option value="TR">Tripura</option>
+    <option value="UP">Uttar Pradesh</option>
+    <option value="UT">Uttarakhand</option>
+    <option value="WB">West Bengal</option>
+</select>
+<label for="Fin-Year">FY:</label>
+<select id="Fin-Year" name="Fin-Year"  class="control">
+    <option value="FY21-22">21-22</option>
+    <option value="FY22-23">22-23</option>
+</select>
+<!--<input type="text" id="State" name="State" placeholder="State" required="required" class="control">-->
+<label for="District">District:</label>
+<input type="text" id="District" name="District" placeholder="District" required="required" class="control">
+<label for="Sub-District">Sub-District:</label>
+<input type="text" id="Sub-District" name="Sub-District" placeholder="Sub-District" required="required" class="control">
+<br>
+<label for="Panchayat">Panchayat:</label>
+<input type="text" id="Panchayat" name="Panchayat" placeholder="Panchayat" required="required" class="control">
+<label for="Number_of_audits">Number_of_audits:</label>
+<input type="number" id="Number_of_audits" name="Number_of_audits" placeholder="Number_of_audits" required="required" class="control">
+<label for="WardNo.">WardNo.:</label>
+<input type="number" id="WardNo." name="WardNo." placeholder="WardNo." required="required" class="control">
+<br>
+<label for="BankName">BankName:</label>
+<input type="text" id="BankName" name="BankName" placeholder="BankName" required="required" class="control">
+<label for="BankNumber">BankNumber:</label>
+<input type="numeric" id="BankNumber" name="BankNumber" placeholder="BankNumber" required="required" class="control">
+<label for="YojnaName">YojnaName:</label>
+<input type="text" id="YojnaName" name="YojnaName" placeholder="YojnaName" required="required" class="control">
+<br>
+<label for="OpeningBalance">OpeningBalance:</label>
+<input type="number" id="OpeningBalance" name="OpeningBalance" placeholder="OpeningBalance" required="required" class="control">
+<label for="ClosingBalance">ClosingBalance:</label>
+<input type="number" id="ClosingBalance" name="ClosingBalance" placeholder="ClosingBalance"  required="required" class="control">
+<br>
+<button type="insert" class="button is-offset-4 is-success" >Insert</button>
+
+{% endblock %}
